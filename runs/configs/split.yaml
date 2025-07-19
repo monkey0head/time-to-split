@@ -1,0 +1,12 @@
+defaults:
+  - _self_
+  - dataset: Movielens-1m
+
+save_results: True
+
+split_type: global_timesplit  # leave-one-out, global_timesplit
+split_params:
+  quantile:  # 0.9, 0.95, 0.975, 0.8 
+  validation_quantile: ${split_params.quantile}  # quantile to take for validation from the remaining DF (after splitting into train and test)
+  validation_type: by_user  # by_user, by_time, last_train_item
+  validation_size: # for the by_user setup

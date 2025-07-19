@@ -1,0 +1,8 @@
+name: Zvuk
+filter_seen: False
+column_name:  
+  user_id: 'user_id'
+  item_id: 'track_id'
+  timestamp: 'datetime'
+  relevance: 
+  # relevance: 'overall'

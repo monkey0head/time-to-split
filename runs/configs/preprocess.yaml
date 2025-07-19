@@ -1,0 +1,9 @@
+prep_params: 
+  item_min_count: 5
+  seq_min_len: 5
+  users_sample: 
+  core: True
+  encoding: True
+  drop_conseq_repeats: True
+  filter_by_relevance: False
+  save_to_disk: True

@@ -1,0 +1,8 @@
+name: Sports
+filter_seen: True
+column_name:  
+  user_id: 'reviewerID'
+  item_id: 'asin'
+  timestamp: 'unixReviewTime'
+  relevance: 
+  # relevance: 'overall'

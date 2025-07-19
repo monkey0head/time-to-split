@@ -1,0 +1,15 @@
+model_class: GRU4Rec
+
+grid_point_number: # order number in the hyperparameter grid: 0,4,5,6,7,8,9,10,11,12,13,14,15,16,20,21,22,23,24,25,26,27,28,29,30,31,32,36,37,38,39,40,41,42,43,44,45,46,47,48,52,53,54,55,56,57,58,59,60,61,62,63,64,68,69,70,71,72,73,74,75,76,77,78,79,80,84,85,86,87,88,89,90,91,92,93,94,95,96,100,101,102,103,104,105,106,107,108,109,110,111,112,116,117,118,119,120,121,122,123,124,125,126,127
+default_grid: ${get_grid_config:${model.grid_point_number},${model.hyper},${model.model_class}}
+
+model_params:
+  input_size: ${model.default_grid.hidden_size} # take equal hidden_size
+  hidden_size: ${model.default_grid.hidden_size}
+  num_layers: ${model.default_grid.num_layers}
+  dropout: ${model.default_grid.dropout}
+
+hyper:
+  hidden_size: [16, 32, 64, 128, 256, 512, 48, 96]
+  num_layers: [1, 2, 3, 4] 
+  dropout: [0.1, 0.2, 0.3, 0.5] # same resuts if num_layers is 1, so its only 104 effective points in total 

@@ -1,0 +1,8 @@
+name: Diginetica
+filter_seen: False
+column_name:  
+  user_id: 'sessionId'
+  item_id: 'itemId'
+  timestamp: 'timestamp'
+  relevance: 
+  # relevance: 'overall'

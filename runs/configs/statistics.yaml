@@ -1,0 +1,16 @@
+defaults:
+  - _self_
+  - dataset: Movielens-1m
+
+random_state: 17
+
+clearml_project_folder:  # seq_splits
+clearml_task_name: # statistics_av
+save_results: True
+
+split_type: raw  # leave-one-out, global_timesplit, raw, preprocessed
+split_params:
+  quantile: # 0.9, 0.95
+  validation_type: # val_by_user, val_by_time, val_last_train_item
+  validation_quantile: ${split_params.quantile}
+  # validation_quantile: 0.9  # quantile of the remaining DF after splitting into train and test

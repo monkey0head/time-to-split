@@ -1,0 +1,20 @@
+model_class: BERT4Rec
+
+grid_point_number: # order number in the hyperparameter grid, 0-107
+default_grid: ${get_grid_config:${model.grid_point_number},${model.hyper},${model.model_class}}
+
+mlm_probability: 0.2 # 
+masking_value: 1
+model_params:
+  vocab_size: 2 # isn't used, placeholder for BertConfig
+  max_position_embeddings: 256
+  hidden_size: ${model.default_grid.hidden_size}
+  num_hidden_layers: ${model.default_grid.num_hidden_layers}
+  num_attention_heads: ${model.default_grid.num_attention_heads}
+  intermediate_size: ${calc:2*${model.default_grid.hidden_size}}
+  hidden_dropout_prob: ${model.default_grid.hidden_dropout_prob}
+hyper:
+  hidden_size: [32, 64, 128, 256]
+  num_hidden_layers: [1, 2, 3]
+  num_attention_heads: [1, 2, 4]
+  hidden_dropout_prob: [0.1, 0.3, 0.5]

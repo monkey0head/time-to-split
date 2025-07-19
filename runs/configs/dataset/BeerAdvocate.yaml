@@ -1,0 +1,8 @@
+name: BeerAdvocate
+filter_seen: True
+column_name:  
+  user_id: 'user_id' #'review/profileName'
+  item_id: 'item_id' #'beer/beerId'
+  timestamp: 'timestamp' #'review/time'
+  relevance: 
+  # relevance: 'review/overall'

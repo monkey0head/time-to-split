@@ -1,0 +1,8 @@
+name: Movielens-20m
+filter_seen: True
+column_name:  
+  user_id: 'userId'
+  item_id: 'movieId'
+  timestamp: 'timestamp'
+  relevance: 
+  # relevance: 'rating'

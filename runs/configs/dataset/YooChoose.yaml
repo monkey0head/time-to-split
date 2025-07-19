@@ -1,0 +1,7 @@
+name: YooChoose
+filter_seen: False
+column_name:  
+  user_id: 'session_id'
+  item_id: 'item_id'
+  timestamp: 'ts'
+  relevance: 

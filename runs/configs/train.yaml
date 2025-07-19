@@ -1,0 +1,48 @@
+cuda_visible_devices: 0
+random_state: 17
+
+defaults:
+  - _self_
+  - dataset: Movielens-1m
+  - model: SASRec
+
+clearml_project_folder:  # seq_splits
+clearml_task_name:  # train
+
+split_type: global_timesplit  # global_timesplit, leave-one-out
+split_subtype:  # if global_timesplit: val_by_user, val_last_train_item, val_by_time
+quantile: # 0.9, 0.95, 0.975, 0.8 
+validation_quantile: ${quantile}
+
+dataset_params:
+  max_length: 128
+
+dataloader:
+  batch_size: 256
+  test_batch_size: 1024
+  num_workers: 8
+  validation_size: 1024  # ?
+
+seqrec_module:
+  lr: 0.001
+  predict_top_k: 10  # this value is used for validation
+  filter_seen: ${dataset.filter_seen}
+
+trainer_params:
+  max_epochs: 300
+patience: 10
+load_if_possible: True
+
+evaluator:
+  successive_val: False 
+  successive_test: False
+  successive_test_retrained: ${evaluator.successive_test}
+  calc_successive_metrics_val: True
+  calc_successive_metrics_test: True
+  calc_successive_metrics_test_retrained: ${evaluator.calc_successive_metrics_test}
+  successive_replay_metrics: False
+  metrics: ['NDCG', 'HitRate', 'MRR', 'Coverage']
+  top_k: [1, 5, 10, 20, 50, 100]
+retrain_with_validation: False
+save_val_predictions: False
+save_test_predictions: False

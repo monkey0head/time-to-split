@@ -1,0 +1,16 @@
+model_class: SASRec
+
+grid_point_number: # order number in the hyperparameter grid, 0-107
+default_grid: ${get_grid_config:${model.grid_point_number},${model.hyper},${model.model_class}}
+model_params:
+  maxlen: ${dataset_params.max_length}
+  hidden_units: ${model.default_grid.hidden_units}
+  num_blocks: ${model.default_grid.num_blocks}
+  num_heads: ${model.default_grid.num_heads}
+  dropout_rate: ${model.default_grid.dropout_rate}
+  
+hyper:
+  hidden_units: [32, 64, 128, 256]
+  num_blocks: [1, 2, 3]
+  num_heads: [1, 2, 4]
+  dropout_rate: [0.1, 0.3, 0.5]
