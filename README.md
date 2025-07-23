@@ -1,16 +1,29 @@
-# Time to Split: Exploring Data Splitting Strategies for Offline Evaluation of Sequential Recommenders
+<h1 align="center"> Time to Split: Exploring Data Splitting Strategies for Offline Evaluation of Sequential Recommenders</h1>
 
-This repository contains the code for the reproducibility paper "Time to Split: Exploring Data Splitting Strategies for Offline Evaluation of Sequential Recommenders"
 
-### Abstract
-> Modern sequential recommender systems, ranging from lightweight transformer-based variants to large language models, have become increasingly prominent in academia and industry due to their strong performance in the next-item prediction task. Yet common evaluation protocols for sequential recommendations remain insufficiently developed: they often fail to reflect the corresponding recommendation task accurately, or are not aligned with real-world scenarios.
+<a href="https://arxiv.org/abs/2507.16289"><img src="https://img.shields.io/badge/arXiv-2507.16289-b31b1b.svg" height=22.5><a>
+[![License](https://img.shields.io/github/license/AIRI-Institute/al_toolbox)](./LICENSE)
+
+[Danil Gusak $^*$](https://scholar.google.com/citations?user=EqAyueEAAAAJ&hl), [Anna Volodkevich $^*$](https://scholar.google.com/citations?user=rYp0bDkAAAAJ&hl), [Anton Klenitskiy $^*$](https://scholar.google.com/citations?user=eGTslO8AAAAJ&hl), [Alexey Vasilev](https://scholar.google.com/citations?user=4vb0JIwAAAAJ&hl), [Evgeny Frolov](https://scholar.google.com/citations?user=l6cMdUEAAAAJ&hl)
+
+
+> Modern sequential recommender systems have become increasingly prominent in academia and industry due to their strong performance in the next-item prediction task. Yet common evaluation protocols for sequential recommendations remain insufficiently developed: they often fail to reflect the corresponding recommendation task accurately, or are not aligned with real-world scenarios.
 > 
 > Although the widely used *leave-one-out* split matches next-item prediction, it permits the overlap between training and test periods, which leads to temporal leakage and unrealistically long test horizon, ultimately limiting real-world relevance.
 *Global temporal splitting* addresses these issues by evaluating on distinct future periods. However, its applications to sequential recommendations remain loosely defined, particularly in terms of selecting target interactions and constructing a validation subset that provides necessary consistency between validation and test metrics.
 > 
-> In this paper, we demonstrate that evaluation outcomes can vary significantly across splitting strategies, influencing model rankings and practical deployment decisions. To improve reproducibility in both academic and industrial settings, we systematically compare different splitting strategies for sequential recommendations across multiple datasets and established baselines.
-Our findings show that the prevalent leave-one-out split often poorly aligns with more realistic evaluation strategies.
+> We demonstrate that evaluation outcomes can vary significantly across splitting strategies, influencing model rankings and practical deployment decisions. To improve reproducibility in both academic and industrial settings, we compare different splitting strategies for sequential recommendations across multiple datasets and established baselines.
+Our findings show that prevalent splits, such as leave-one-out, may be insufficiently aligned with more realistic evaluation strategies.
 
+
+<div align="center">
+    <a >
+        <img src="assets/splits.png" width="100%">
+    </a>
+    <p>
+        <i>Data splitting and target selection strategies for sequential recommendations. (a) Leave-one-out split. (b) Global temporal split: all interactions after timepoint T_test are placed in the holdout set, targets for these holdout sequences are chosen according to (c). (c) Target items selection options for each holdout sequence (applicable for both test and validation sequences).</i>
+    </p>
+</div>
 
 ## Usage
 
@@ -179,3 +192,18 @@ you can find `.csv` files containing all test and validation metrics for differe
 - [Time_gaps.ipynb](notebooks/Time_gaps.ipynb) Run after `Data Splitting` and previous pipeline steps to build Figure 4,
 - [Test_vs_test.ipynb](notebooks/Test_vs_test.ipynb) reproduces Figure 5 and Figure 6 from the paper,
 - [Test_vs_validation.ipynb](notebooks/Test_vs_validation.ipynb) reproduces Figure 8.
+
+
+## 📜 Citation
+
+If you find our work helpful, please consider citing the paper:
+
+```bibtex
+@inproceedings{timetosplit2025,
+  title={Time to Split: Exploring Data Splitting Strategies for Offline Evaluation of Sequential Recommenders},
+  author={Gusak, Danil and Volodkevich, Anna and Klenitskiy, Anton and Vasilev, Alexey and Frolov, Evgeny},
+  booktitle={Proceedings of the 19th ACM Conference on Recommender Systems},
+  doi = {10.1145/3705328.3748164},
+  year={2025}
+}
+```
