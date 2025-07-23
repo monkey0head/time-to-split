@@ -4,7 +4,13 @@
 <a href="https://arxiv.org/abs/2507.16289"><img src="https://img.shields.io/badge/arXiv-2507.16289-b31b1b.svg" height=22.5><a>
 [![License](https://img.shields.io/github/license/AIRI-Institute/al_toolbox)](./LICENSE)
 
-[Danil Gusak $^*$](https://scholar.google.com/citations?user=EqAyueEAAAAJ&hl), [Anna Volodkevich $^*$](https://scholar.google.com/citations?user=rYp0bDkAAAAJ&hl), [Anton Klenitskiy $^*$](https://scholar.google.com/citations?user=eGTslO8AAAAJ&hl), [Alexey Vasilev](https://scholar.google.com/citations?user=4vb0JIwAAAAJ&hl), [Evgeny Frolov](https://scholar.google.com/citations?user=l6cMdUEAAAAJ&hl)
+<p>
+  <a href="https://scholar.google.com/citations?user=EqAyueEAAAAJ&amp;hl">Danil Gusak<sup>*</sup></a>,
+  <a href="https://scholar.google.com/citations?user=rYp0bDkAAAAJ&amp;hl">Anna Volodkevich<sup>*</sup></a>,
+  <a href="https://scholar.google.com/citations?user=eGTslO8AAAAJ&amp;hl">Anton Klenitskiy<sup>*</sup></a>,
+  <a href="https://scholar.google.com/citations?user=4vb0JIwAAAAJ&amp;hl">Alexey Vasilev</a>,
+  <a href="https://scholar.google.com/citations?user=l6cMdUEAAAAJ&amp;hl">Evgeny Frolov</a>
+</p>
 
 
 > Modern sequential recommender systems have become increasingly prominent in academia and industry due to their strong performance in the next-item prediction task. Yet common evaluation protocols for sequential recommendations remain insufficiently developed: they often fail to reflect the corresponding recommendation task accurately, or are not aligned with real-world scenarios.
@@ -203,7 +209,7 @@ If you find our work helpful, please consider citing the paper:
   title={Time to Split: Exploring Data Splitting Strategies for Offline Evaluation of Sequential Recommenders},
   author={Gusak, Danil and Volodkevich, Anna and Klenitskiy, Anton and Vasilev, Alexey and Frolov, Evgeny},
   booktitle={Proceedings of the 19th ACM Conference on Recommender Systems},
-  doi = {10.1145/3705328.3748164},
+  doi={10.1145/3705328.3748164},
   year={2025}
 }
 ```
