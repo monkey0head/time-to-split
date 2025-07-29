@@ -3,6 +3,7 @@
 
 <a href="https://arxiv.org/abs/2507.16289"><img src="https://img.shields.io/badge/arXiv-2507.16289-b31b1b.svg" height=22.5><a>
 [![License](https://img.shields.io/github/license/AIRI-Institute/al_toolbox)](./LICENSE)
+![PyTorch](https://img.shields.io/badge/framework-PyTorch-EE4C2C?logo=pytorch)
 
 <p>
   <a href="https://scholar.google.com/citations?user=EqAyueEAAAAJ&amp;hl">Danil Gusak<sup>*</sup></a>,
