@@ -13,13 +13,7 @@
 </p>
 
 
-> Modern sequential recommender systems have become increasingly prominent in academia and industry due to their strong performance in the next-item prediction task. Yet common evaluation protocols for sequential recommendations remain insufficiently developed: they often fail to reflect the corresponding recommendation task accurately, or are not aligned with real-world scenarios.
-> 
-> Although the widely used *leave-one-out* split matches next-item prediction, it permits the overlap between training and test periods, which leads to temporal leakage and unrealistically long test horizon, ultimately limiting real-world relevance.
-*Global temporal splitting* addresses these issues by evaluating on distinct future periods. However, its applications to sequential recommendations remain loosely defined, particularly in terms of selecting target interactions and constructing a validation subset that provides necessary consistency between validation and test metrics.
-> 
-> We demonstrate that evaluation outcomes can vary significantly across splitting strategies, influencing model rankings and practical deployment decisions. To improve reproducibility in both academic and industrial settings, we compare different splitting strategies for sequential recommendations across multiple datasets and established baselines.
-Our findings show that prevalent splits, such as leave-one-out, may be insufficiently aligned with more realistic evaluation strategies.
+> Sequential recommender systems currently dominate next‑item prediction task, but common evaluation protocols for sequential recommendations often fall short of real‑world scenarios. **Leave‑one‑out** splits introduce temporal leakage and unrealistically long test horizons, while **global temporal** splits lack clear rules for selecting target interactions and constructing a validation subset that provides necessary consistency between validation and test metrics. We systematically compare splitting strategies across multiple datasets and baselines, showing that your **choice of split can significantly reorder model rankings and influence deployment decisions**. Our results lay the groundwork for more realistic and reproducible evaluation guidelines.
 
 
 <div align="center">
