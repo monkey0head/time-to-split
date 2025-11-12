@@ -3,7 +3,7 @@
 
 <a href="https://arxiv.org/abs/2507.16289"><img src="https://img.shields.io/badge/arXiv-2507.16289-b31b1b.svg" height=22.5><a>
 [![Cite](https://img.shields.io/badge/Cite-BibTeX-%238a91faff)](https://github.com/monkey0head/time-to-split?tab=readme-ov-file#-citation)
-[![License](https://img.shields.io/github/license/AIRI-Institute/al_toolbox)](./LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
 ![PyTorch](https://img.shields.io/badge/framework-PyTorch-EE4C2C?logo=pytorch)
 
 <p>
