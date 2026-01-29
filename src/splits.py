@@ -71,7 +71,7 @@ class GlobalTimeSplitter:
         time_threshold = data[self.timestamp_col].quantile(quantile)
 
         # we need at least two items in a train sequence for training
-        user_second_timestamp = data.groupby("user_id")[self.timestamp_col].nth(1)
+        user_second_timestamp = data.groupby(self.user_col)[self.timestamp_col].transform(lambda x: x.iloc[1] if len(x) > 1 else None).dropna()
         train_users = user_second_timestamp[
             user_second_timestamp <= time_threshold
         ].index
@@ -80,7 +80,7 @@ class GlobalTimeSplitter:
         train = train[train[self.timestamp_col] <= time_threshold]
 
         # test contains users with the last interaction after the time threshold
-        user_last_timestamp = data.groupby("user_id")[self.timestamp_col].nth(-1)
+        user_last_timestamp = data.groupby(self.user_col)[self.timestamp_col].transform(lambda x: x.iloc[-1])
         test_users = user_last_timestamp[user_last_timestamp > time_threshold].index
         test = data[data[self.user_col].isin(test_users)]
 
